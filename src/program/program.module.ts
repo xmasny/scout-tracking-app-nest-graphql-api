@@ -7,7 +7,11 @@ import { VekKatModule } from './vek-kat/vek-kat.module';
 import { ExpertskeOdborkyModule } from './expertske-odborky/expertske-odborky.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([ProgramRepository]), VekKatModule, ExpertskeOdborkyModule],
+  imports: [
+    TypeOrmModule.forFeature([ProgramRepository]),
+    VekKatModule,
+    ExpertskeOdborkyModule,
+  ],
   providers: [ProgramResolver, ProgramService],
 })
 export class ProgramModule {}

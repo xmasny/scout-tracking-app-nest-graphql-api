@@ -31,6 +31,18 @@ export class Program {
   @JoinColumn({ name: 'program_kat' })
   program_kat: ProgramKat;
 
+  @Field()
+  @Column()
+  program_name: string;
+
+  @Field()
+  @Column()
+  program_photo: string;
+
+  @Field(() => [Uloha])
+  @OneToMany(() => Uloha, (ulohy) => ulohy.program)
+  ulohy: [Uloha];
+
   @Field(() => Stupen, { nullable: true })
   @ManyToOne(() => Stupen, (stupen) => stupen.id)
   @JoinColumn({ name: 'stupen' })
@@ -41,19 +53,7 @@ export class Program {
   @JoinColumn({ name: 'expertske_odborky' })
   expertske_odborky?: ExpertskeOdborky;
 
-  @Field()
-  @Column()
-  program_name: string;
-
-  @Field()
-  @Column()
-  program_photo: string;
-
   @Field(() => JSON, { nullable: true })
   @Column({ type: 'json' })
   program_info?: any;
-
-  @Field(() => [Uloha])
-  @OneToMany(() => Uloha, (ulohy) => ulohy.program)
-  ulohy: [Uloha];
 }

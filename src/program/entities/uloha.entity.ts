@@ -22,13 +22,13 @@ export class Uloha {
   @Column()
   text_ulohy: string;
 
-  @Field(() => Int, { nullable: true })
-  @Column()
-  potrebny_pocet_poduloh?: number;
-
   @ManyToOne(() => Program, (program) => program.ulohy)
   @JoinColumn({ name: 'program_id' })
   program: Program;
+
+  @Field(() => Int, { nullable: true })
+  @Column()
+  potrebny_pocet_poduloh?: number;
 
   @Field(() => JSON, { nullable: true })
   @Column({ type: 'json' })

@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Program } from './entities/program.entity';
 import { ProgramRepository } from './program.repository';
-
 @Injectable()
 export class ProgramService {
   constructor(
@@ -10,7 +9,7 @@ export class ProgramService {
     private programRepository: ProgramRepository,
   ) {}
 
-  async findAll(): Promise<Program[]> {
+  async getAllProgram(id: number): Promise<Program[]> {
     const program = await this.programRepository.find({
       relations: [
         'program_kat',
@@ -19,6 +18,7 @@ export class ProgramService {
         'stupen',
         'expertske_odborky',
       ],
+      where: { program_kat: id },
     });
 
     console.log(program);
