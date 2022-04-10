@@ -8,7 +8,7 @@ export class ExpertskeOdborkyResolver {
     private readonly expertskeOdborkyService: ExpertskeOdborkyService,
   ) {}
 
-  @Query(() => [ExpertskeOdborky], { name: 'expertske_odborky' })
+  @Query(() => [ExpertskeOdborky], { name: 'expertskeOdborky' })
   getExpOdb(): Promise<ExpertskeOdborky[]> {
     return this.expertskeOdborkyService.getExpOdb();
   }

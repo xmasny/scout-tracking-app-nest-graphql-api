@@ -18,8 +18,8 @@ import { ExpertskeOdborky } from '../expertske-odborky/expertske-odborky.entity'
 @ObjectType()
 export class Program {
   @Field(() => Int)
-  @PrimaryColumn()
-  program_id: number;
+  @PrimaryColumn({ name: 'program_id' })
+  id: number;
 
   @Field(() => VekKat)
   @ManyToOne(() => VekKat, (vekKat) => vekKat.id)
@@ -29,15 +29,15 @@ export class Program {
   @Field(() => ProgramKat)
   @ManyToOne(() => ProgramKat, (progKat) => progKat.id)
   @JoinColumn({ name: 'program_kat' })
-  program_kat: ProgramKat;
+  kategoria: ProgramKat;
 
   @Field()
-  @Column()
-  program_name: string;
+  @Column({ name: 'program_name' })
+  name: string;
 
   @Field()
-  @Column()
-  program_photo: string;
+  @Column({ name: 'program_photo' })
+  photo: string;
 
   @Field(() => [Uloha])
   @OneToMany(() => Uloha, (ulohy) => ulohy.program)
@@ -54,6 +54,6 @@ export class Program {
   expertske_odborky?: ExpertskeOdborky;
 
   @Field(() => JSON, { nullable: true })
-  @Column({ type: 'json' })
-  program_info?: any;
+  @Column({ type: 'json', name: 'program_info' })
+  info?: any;
 }

@@ -12,13 +12,13 @@ export class ProgramService {
   async getAllProgram(id: number): Promise<Program[]> {
     const program = await this.programRepository.find({
       relations: [
-        'program_kat',
+        'kategoria',
         'vekova_kat',
         'ulohy',
         'stupen',
         'expertske_odborky',
       ],
-      where: { program_kat: id },
+      where: { kategoria: id },
     });
 
     console.log(program);

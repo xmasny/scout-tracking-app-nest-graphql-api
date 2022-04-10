@@ -6,7 +6,7 @@ import { VekKat } from './vek-kat.entity';
 export class VekKatResolver {
   constructor(private readonly vekKatService: VekKatService) {}
 
-  @Query(() => [VekKat], { name: 'vekova_kat' })
+  @Query(() => [VekKat], { name: 'vekovaKat' })
   getVekKat(): Promise<VekKat[]> {
     return this.vekKatService.getVekKat();
   }

@@ -38,19 +38,19 @@ type ExpertskeOdborky {
 }
 
 type Program {
-  program_id: Int!
+  id: Int!
   vekova_kat: VekKat!
-  program_kat: ProgramKat!
-  program_name: String!
-  program_photo: String!
+  kategoria: ProgramKat!
+  name: String!
+  photo: String!
   ulohy: [Uloha!]!
   stupen: Stupen
   expertske_odborky: ExpertskeOdborky
-  program_info: JSON
+  info: JSON
 }
 
 type Query {
   program(id: Int!): [Program!]!
-  vekova_kat: [VekKat!]!
-  expertske_odborky: [ExpertskeOdborky!]!
+  vekovaKat: [VekKat!]!
+  expertskeOdborky: [ExpertskeOdborky!]!
 }
