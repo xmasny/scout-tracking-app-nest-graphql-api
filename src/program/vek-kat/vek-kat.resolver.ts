@@ -7,7 +7,7 @@ export class VekKatResolver {
   constructor(private readonly vekKatService: VekKatService) {}
 
   @Query(() => [VekKat], { name: 'vekovaKat' })
-  getVekKat(): Promise<VekKat[]> {
-    return this.vekKatService.getVekKat();
+  getVekKatOdborky(): Promise<VekKat[]> {
+    return this.vekKatService.getVekKatOdborky();
   }
 }

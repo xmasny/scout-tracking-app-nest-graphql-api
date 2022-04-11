@@ -8,8 +8,9 @@ export class ProgramResolver {
 
   @Query(() => [Program], { name: 'program' })
   getAllProgram(
-    @Args('id', { type: () => Int }) id: number,
+    @Args('program_id', { type: () => Int }) programId: number,
+    @Args('vekova_kat_id', { type: () => Int }) vekovaKatId: number,
   ): Promise<Program[]> {
-    return this.programService.getAllProgram(id);
+    return this.programService.getAllProgram(programId, vekovaKatId);
   }
 }

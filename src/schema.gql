@@ -50,7 +50,7 @@ type Program {
 }
 
 type Query {
-  program(id: Int!): [Program!]!
+  program(program_id: Int!, vekova_kat_id: Int!): [Program!]!
   vekovaKat: [VekKat!]!
   expertskeOdborky: [ExpertskeOdborky!]!
 }

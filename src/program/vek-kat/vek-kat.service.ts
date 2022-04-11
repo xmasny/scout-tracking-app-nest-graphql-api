@@ -13,7 +13,7 @@ export class VekKatService {
     private vekovaKatRepository: VekovaKatRepository,
   ) {}
 
-  async getVekKat(): Promise<VekKat[]> {
+  async getVekKatOdborky(): Promise<VekKat[]> {
     const vekKat: VekKat[] = await this.vekovaKatRepository.find({
       where: [{ id: VLCATA }, { id: SKAUTI }, { id: ROVERI }],
       order: {

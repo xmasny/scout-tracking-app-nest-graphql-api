@@ -9,7 +9,10 @@ export class ProgramService {
     private programRepository: ProgramRepository,
   ) {}
 
-  async getAllProgram(id: number): Promise<Program[]> {
+  async getAllProgram(
+    programId: number,
+    vekovaKatId: number,
+  ): Promise<Program[]> {
     const program = await this.programRepository.find({
       relations: [
         'kategoria',
@@ -18,10 +21,9 @@ export class ProgramService {
         'stupen',
         'expertske_odborky',
       ],
-      where: { kategoria: id },
+      where: { kategoria: programId, vekova_kat: vekovaKatId },
     });
 
-    console.log(program);
     return program;
   }
 }
