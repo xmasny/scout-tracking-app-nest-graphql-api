@@ -22,6 +22,9 @@ export class ProgramService {
         'expertske_odborky',
       ],
       where: { kategoria: programId, vekova_kat: vekovaKatId },
+      order: {
+        name: 'ASC',
+      },
     });
 
     return program;
