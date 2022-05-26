@@ -5,12 +5,18 @@ import { ProgramRepository } from './program.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { VekKatModule } from './vek-kat/vek-kat.module';
 import { ExpertskeOdborkyModule } from './expertske-odborky/expertske-odborky.module';
+import { SplnenyProgramModule } from './splneny-program/splneny-program.module';
+import { ProgramKatModule } from './program-kat/program-kat.module';
+import { StupenModule } from './stupen/stupen.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([ProgramRepository]),
     VekKatModule,
     ExpertskeOdborkyModule,
+    SplnenyProgramModule,
+    ProgramKatModule,
+    StupenModule,
   ],
   providers: [ProgramResolver, ProgramService],
 })

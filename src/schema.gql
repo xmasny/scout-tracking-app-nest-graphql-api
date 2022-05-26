@@ -53,4 +53,6 @@ type Query {
   program(program_id: Int!, vekova_kat_id: Int!): [Program!]!
   vekovaKat: [VekKat!]!
   expertskeOdborky: [ExpertskeOdborky!]!
+  programKat: [ProgramKat!]!
+  stupen: [Stupen!]!
 }

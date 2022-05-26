@@ -9,9 +9,9 @@ import {
 } from 'typeorm';
 import JSON from 'graphql-type-json';
 import { Uloha } from './uloha.entity';
-import { ProgramKat } from './program-kat.entity';
+import { ProgramKat } from '../program-kat/program-kat.entity';
 import { VekKat } from '../vek-kat/vek-kat.entity';
-import { Stupen } from './stupen.entity';
+import { Stupen } from '../stupen/stupen.entity';
 import { ExpertskeOdborky } from '../expertske-odborky/expertske-odborky.entity';
 
 @Entity('program')
