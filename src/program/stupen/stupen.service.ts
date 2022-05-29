@@ -11,7 +11,11 @@ export class StupenService {
   ) {}
 
   async getStupen(): Promise<Stupen[]> {
-    const stupen: Stupen[] = await this.stupenRepository.find();
+    const stupen: Stupen[] = await this.stupenRepository.find({
+      order: {
+        id: 'ASC',
+      },
+    });
     return stupen;
   }
 }

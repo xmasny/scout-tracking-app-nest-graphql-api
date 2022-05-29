@@ -40,7 +40,7 @@ type ExpertskeOdborky {
 type Program {
   id: Int!
   vekova_kat: VekKat!
-  kategoria: ProgramKat!
+  program_kat: ProgramKat!
   name: String!
   photo: String!
   ulohy: [Uloha!]!
@@ -55,4 +55,8 @@ type Query {
   expertskeOdborky: [ExpertskeOdborky!]!
   programKat: [ProgramKat!]!
   stupen: [Stupen!]!
+}
+
+type Mutation {
+  addNewOdborka(program_kat: Int!, vekova_kat: Int!, name: String!, photo: String!, stupen: Int!, expertske_odborky: Int!): Program!
 }

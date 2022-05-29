@@ -29,7 +29,7 @@ export class Program {
   @Field(() => ProgramKat)
   @ManyToOne(() => ProgramKat, (progKat) => progKat.id)
   @JoinColumn({ name: 'program_kat' })
-  kategoria: ProgramKat;
+  program_kat: ProgramKat;
 
   @Field()
   @Column({ name: 'program_name' })

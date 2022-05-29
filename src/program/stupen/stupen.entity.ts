@@ -6,7 +6,7 @@ import { Program } from '../entities/program.entity';
 @ObjectType()
 export class Stupen {
   @Field(() => Int)
-  @OneToMany(() => Program, (program) => program.kategoria)
+  @OneToMany(() => Program, (program) => program.program_kat)
   @PrimaryColumn({ name: 'stupen_id' })
   id: number;
 

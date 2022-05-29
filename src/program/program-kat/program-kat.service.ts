@@ -11,7 +11,11 @@ export class ProgramKatService {
   ) {}
 
   async getProgramKat(): Promise<ProgramKat[]> {
-    const programKat: ProgramKat[] = await this.programKatRepository.find();
+    const programKat: ProgramKat[] = await this.programKatRepository.find({
+      order: {
+        id: 'ASC',
+      },
+    });
     return programKat;
   }
 }
