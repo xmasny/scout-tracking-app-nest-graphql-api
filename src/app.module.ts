@@ -12,6 +12,12 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       driver: ApolloDriver,
+      cors: {
+        origin: [
+          'https://scout-tracking-app.netlify.app',
+          'https://scout-tracking-app-graphql.herokuapp.com',
+        ],
+      },
     }),
     ProgramModule,
   ],
