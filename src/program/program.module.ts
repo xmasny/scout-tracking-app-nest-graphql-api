@@ -8,6 +8,7 @@ import { ExpertskeOdborkyModule } from './expertske-odborky/expertske-odborky.mo
 import { SplnenyProgramModule } from './splneny-program/splneny-program.module';
 import { ProgramKatModule } from './program-kat/program-kat.module';
 import { StupenModule } from './stupen/stupen.module';
+import { UlohyModule } from './ulohy/ulohy.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { StupenModule } from './stupen/stupen.module';
     SplnenyProgramModule,
     ProgramKatModule,
     StupenModule,
+    UlohyModule,
   ],
   providers: [ProgramResolver, ProgramService],
 })

@@ -59,4 +59,13 @@ type Query {
 
 type Mutation {
   addNewOdborka(program_kat: Int!, vekova_kat: Int!, name: String!, photo: String!, stupen: Int!, expertske_odborky: Int!): Program!
+  addNewUlohyOdborka(ulohy: [UlohaInputType!]!): [Uloha!]!
+}
+
+input UlohaInputType {
+  program_id: Int!
+  cislo_ulohy: Int!
+  text_ulohy: String!
+  potrebny_pocet_poduloh: Int
+  podulohy: JSON
 }

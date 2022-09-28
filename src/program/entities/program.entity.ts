@@ -8,7 +8,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 import JSON from 'graphql-type-json';
-import { Uloha } from './uloha.entity';
+import { Uloha } from '../ulohy/entities/ulohy.entity';
 import { ProgramKat } from '../program-kat/program-kat.entity';
 import { VekKat } from '../vek-kat/vek-kat.entity';
 import { Stupen } from '../stupen/stupen.entity';

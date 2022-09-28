@@ -1,10 +1,10 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { ObjectType, Field, Int, InputType } from '@nestjs/graphql';
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
-import { Program } from './program.entity';
+import { Program } from '../../entities/program.entity';
 import JSON from 'graphql-type-json';
 
-@Entity('ulohy')
 @ObjectType()
+@Entity('ulohy')
 export class Uloha {
   @Field(() => Int)
   @PrimaryColumn()

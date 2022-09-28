@@ -42,10 +42,10 @@ export class ProgramService {
     if (stupen === 0) stupen = null;
     if (expertskeOdborky === 0) expertskeOdborky = null;
 
-    await this.programRepository
+    const queryData = await this.programRepository
       .createQueryBuilder()
       .insert()
-      .into('program')
+      .into(Program)
       .values({
         program_kat: {
           id: programKat,
@@ -62,14 +62,11 @@ export class ProgramService {
           id: expertskeOdborky,
         },
       })
+      .orIgnore('')
       .execute();
 
-    const lastID = await this.programRepository.query(
-      'SELECT LAST_INSERT_ID() as last_id;',
-    );
-
     const newOdborka = {
-      id: parseInt(lastID[0].last_id),
+      id: parseInt(queryData.raw.insertId),
       program_kat: {
         id: programKat,
       },
