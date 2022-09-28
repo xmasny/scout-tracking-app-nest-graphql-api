@@ -13,7 +13,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       driver: ApolloDriver,
       cors: {
-        origin: 'ttps://scout-tracking-app-graphql.herokuapp.com/graphql',
+        origin: 'ttps://scout-tracking-app-graphql.herokuapp.com',
         credentials: true,
       },
     }),
